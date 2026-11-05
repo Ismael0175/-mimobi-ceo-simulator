@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d16">
+<meta name="description" content="MimoBi CEO Simulator — dirige ta marque, développe ton groupe et prends les décisions.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>MimoBi CEO Simulator</title>
+<style>
+:root{color-scheme:dark;--bg:#090d16;--panel:#111a29;--panel2:#162338;--line:#26364c;--text:#f2f4f8;--muted:#9eacc0;--blue:#288dff;--blue2:#65b5ff;--cream:#e8dfce;--green:#52d6a0;--red:#ff747d;--gold:#f3c66b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#16345b 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit}button{cursor:pointer;color:inherit}.wrap{max-width:1100px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 18px}.brand{font-weight:900;letter-spacing:-1px;font-size:25px}.brand span{color:var(--blue2)}.eyebrow{color:var(--blue2);font-size:10px;font-weight:800;letter-spacing:2px}.topright{text-align:right;font-size:12px;color:var(--muted)}.hero{border:1px solid #29476b;background:linear-gradient(120deg,#101b2c,#122e50 70%,#10233b);border-radius:20px;padding:20px;position:relative;overflow:hidden}.hero:after{content:"MB";position:absolute;right:12px;bottom:-35px;font-size:145px;font-weight:950;color:#ffffff08;letter-spacing:-12px}.hero h1{font-size:clamp(25px,6vw,39px);line-height:1.05;margin:8px 0}.hero p{color:#c4d7ef;margin:0;max-width:550px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.chip,.tag{font-size:10px;border:1px solid #426184;border-radius:99px;padding:5px 9px;color:#d8e8fb;background:#ffffff08}.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.metric,.card{background:linear-gradient(145deg,var(--panel),#0e1725);border:1px solid var(--line);border-radius:15px;padding:14px;min-width:0}.metric small,.muted{color:var(--muted)}.metric strong{display:block;font-size:clamp(19px,4vw,25px);letter-spacing:-.8px;margin:3px 0}.metric .sub{font-size:11px;color:var(--muted)}.positive{color:var(--green)}.negative{color:var(--red)}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 10px}.sectionhead h2{font-size:17px;margin:0}.sectionhead small{color:var(--muted)}.grid{display:grid;grid-template-columns:1fr;gap:10px}.card h3{font-size:15px;margin:0 0 6px}.card p{font-size:13px;color:var(--muted);margin:0 0 12px}.btn{border:1px solid var(--line);background:var(--panel2);border-radius:11px;padding:11px 13px;font-weight:700;font-size:13px}.btn.primary{background:linear-gradient(110deg,#1675df,#299cff);border:0;color:white}.btn.ghost{background:transparent}.btn.danger{border-color:#703d4a;color:#ffabb0}.btn:disabled{opacity:.4;cursor:not-allowed}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.nav{position:fixed;bottom:0;left:0;right:0;z-index:10;background:#0b111deF;border-top:1px solid var(--line);padding:8px 7px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;backdrop-filter:blur(16px)}.nav button{background:none;border:0;color:var(--muted);font-size:10px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 7px;min-width:0}.nav button b{font-size:19px;font-weight:500}.nav button.active{color:var(--blue2)}.view{display:none}.view.active{display:block}.progress{height:7px;background:#263449;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#1675df,#65b5ff);border-radius:9px}.list{display:grid;gap:8px}.item{padding:12px;border:1px solid var(--line);background:#111a29;border-radius:12px}.item p{margin:4px 0 0}.choice{width:100%;text-align:left;border:1px solid var(--line);background:#111a29;border-radius:12px;padding:12px;margin:5px 0}.choice.selected{border-color:var(--blue);background:#142944}.choice strong{display:block}.choice span{display:block;font-size:12px;color:var(--muted);margin-top:4px}.log{padding:10px 12px;border-left:2px solid var(--blue);background:#101927;border-radius:0 9px 9px 0;font-size:12px;margin:7px 0}.table{width:100%;border-collapse:collapse;font-size:12px}.table td,.table th{padding:10px 4px;border-bottom:1px solid var(--line);text-align:left}.table td:last-child,.table th:last-child{text-align:right}.tag{border-color:var(--line);color:var(--muted);background:#ffffff06}.modal{position:fixed;inset:0;background:#000a;z-index:20;display:none;align-items:flex-end;justify-content:center;padding:12px}.modal.show{display:flex}.modalbox{width:min(100%,560px);background:#101a29;border:1px solid var(--line);border-radius:20px;padding:18px;max-height:85vh;overflow:auto}.field{width:100%;padding:11px;background:#0b1320;border:1px solid var(--line);border-radius:9px;color:var(--text);margin:6px 0 12px}.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#193c5d;border:1px solid #3976aa;border-radius:10px;padding:10px 14px;z-index:30;display:none;font-size:12px;width:max-content;max-width:90%}.toast.show{display:block}.footer{text-align:center;color:var(--muted);font-size:10px;padding:25px 0 12px}
+@media(min-width:700px){.wrap{padding:22px}.metrics{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{position:static;border:1px solid var(--line);border-radius:14px;margin:15px 0;padding:7px}.nav button{font-size:12px;flex-direction:row;padding:9px 14px}.nav button b{font-size:16px}.modal{align-items:center}.hero{padding:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div><div class="eyebrow">INDEPENDENT FASHION GROUP</div><div class="brand">MimoBi<span>.</span></div></div><div class="topright"><div id="period">AOÛT 2029 · SEMAINE 1</div><div id="autosave">Sauvegarde locale activée</div></div></header>
+<section class="hero"><div class="eyebrow">CEO SIMULATOR · SAISON 2029</div><h1>Build your<br>own story.</h1><p>Une marque. Un groupe. Tes décisions. Développe MimoBi semaine après semaine, de Cherbourg au marché international.</p><div class="chips"><span class="chip">MODE RÉALISTE</span><span class="chip">RYTHME HEBDOMADAIRE</span><span class="chip">SAUVEGARDE AUTO</span></div></section>
+<div class="metrics">
+ <div class="metric"><small>Trésorerie disponible</small><strong id="mCash">54 967 €</strong><div class="sub" id="mCashSub">Fonds mobilisables</div></div>
+ <div class="metric"><small>Chiffre d'affaires cumulé</small><strong id="mRevenue">32 400 €</strong><div class="sub">Depuis le début de la partie</div></div>
+ <div class="metric"><small>Communauté</small><strong id="mFans">1 780</strong><div class="sub">Membres & clients</div></div>
+ <div class="metric"><small>Réputation</small><strong id="mRep">50/100</strong><div class="sub">Image de marque</div></div>
+</div>
+<nav class="nav" id="nav">
+ <button class="active" data-view="home"><b>⌂</b>Accueil</button><button data-view="brand"><b>✳</b>Marque</button><button data-view="ops"><b>▦</b>Opérations</button><button data-view="team"><b>♙</b>Équipe</button><button data-view="finance"><b>€</b>Finance</button><button data-view="market"><b>◎</b>Marché</button>
+</nav>
+<main>
+<section class="view active" id="view-home">
+ <div class="sectionhead"><h2>Vue générale</h2><small id="weekLabel">Semaine 1 / 4</small></div>
+ <div class="grid">
+  <div class="card"><div class="row"><h3>Cap stratégique</h3><span class="tag">PRIORITÉ</span></div><p>La marque de vêtements redevient le cœur du groupe. Les contrats B2B assurent le financement et la stabilité.</p><div class="row"><span class="muted" style="font-size:12px">Indice marque</span><strong id="brandIndex">35/100</strong></div><div class="progress"><i id="brandProgress" style="width:35%"></i></div><div class="row" style="margin-top:12px"><span class="muted" style="font-size:12px">Santé financière</span><strong id="healthIndex">65/100</strong></div><div class="progress"><i id="healthProgress" style="width:65%"></i></div></div>
+  <div class="card"><h3>Objectifs de la période</h3><div class="list" id="objectives"></div></div>
+ </div>
+ <div class="sectionhead"><h2>Journal de l'entreprise</h2><small>Derniers événements</small></div><div class="card" id="news"></div>
+ <div class="sectionhead"><h2>Décisions de la semaine</h2><small>Planification CEO</small></div><div class="card"><p>Choisis des actions dans les différents pôles. Elles seront exécutées lors de la clôture hebdomadaire.</p><div id="planSummary"></div><div class="row" style="margin-top:12px"><span class="muted">Budget prévu</span><strong id="plannedCost">0 €</strong></div><button class="btn primary" style="width:100%;margin-top:12px" id="closeWeek">Clôturer la semaine →</button><p class="muted" style="font-size:11px;margin:9px 0 0">Les salaires, charges fixes et événements sont intégrés à la clôture. Une clôture est irréversible dans cette sauvegarde.</p></div>
+</section>
+<section class="view" id="view-brand">
+ <div class="sectionhead"><h2>Studio MimoBi</h2><small>Fashion division</small></div>
+ <div class="card"><div class="eyebrow">IDENTITÉ DE MARQUE</div><h2 style="font-size:23px;margin:6px 0">Noir · Crème · Bleu électrique</h2><p>Streetwear premium, identité graphique forte, coupes contemporaines et collections capsules.</p><div class="row"><span class="muted">Notoriété</span><strong id="brandIndex2">35/100</strong></div><div class="progress"><i id="brandProgress2" style="width:35%"></i></div></div>
+ <div class="sectionhead"><h2>Investissements disponibles</h2><small>Choisis tes actions</small></div><div id="brandActions" class="list"></div>
+ <div class="sectionhead"><h2>Catalogue & collections</h2></div><div class="grid"><div class="card"><h3>DROP 001 · GRAPHIC CLUB</h3><p>Capsule de lancement : pièces graphiques, T-shirts premium et identité MimoBi.</p><span class="tag">ARCHIVE FONDATRICE</span></div><div class="card"><h3>DROP 002 · À CONSTRUIRE</h3><p>Nouvelle collection à concevoir selon la demande, les marges et les capacités de production.</p><span class="tag">EN PRÉPARATION</span></div></div>
+</section>
+<section class="view" id="view-ops">
+ <div class="sectionhead"><h2>Opérations & B2B</h2><small>Contrats professionnels</small></div>
+ <div class="grid">
+  <div class="card"><div class="row"><h3>Northwave</h3><span class="tag">EN COURS</span></div><strong style="font-size:23px">47 250 €</strong><p>Contrat professionnel à suivre. Encaissements et livraison selon échéancier.</p></div>
+  <div class="card"><div class="row"><h3>Urban Nation</h3><span class="tag">PRIORITAIRE</span></div><strong style="font-size:23px">127 600 €</strong><p>4 000 pièces · 31,90 €/pièce. Acompte client : 63 800 €. Acompte fournisseur : 40 800 €.</p></div>
+ </div>
+ <div class="sectionhead"><h2>Actions commerciales</h2></div><div id="opsActions" class="list"></div>
+ <div class="sectionhead"><h2>Production & logistique</h2></div><div id="productionActions" class="list"></div>
+</section>
+<section class="view" id="view-team">
+ <div class="sectionhead"><h2>Ressources humaines</h2><small id="staffCount">4 salariés</small></div>
+ <div class="card"><div class="row"><div><div class="muted" style="font-size:12px">Masse salariale mensuelle chargée</div><strong style="font-size:25px" id="payroll">9 640 €</strong></div><span class="tag">ÉQUIPE ACTIVE</span></div><p>Une équipe resserrée. Les recrutements augmentent les capacités mais aussi les coûts fixes.</p></div>
+ <div class="sectionhead"><h2>Organigramme</h2></div><div class="list" id="staffList"></div>
+ <div class="sectionhead"><h2>Développement de l'équipe</h2></div><div id="teamActions" class="list"></div>
+</section>
+<section class="view" id="view-finance">
+ <div class="sectionhead"><h2>Direction financière</h2><small>Comptes du groupe</small></div>
+ <div class="grid">
+  <div class="card"><div class="muted" style="font-size:12px">Trésorerie nette mobilisable</div><strong id="cashFinance" style="font-size:27px">54 967 €</strong><p>Après déduction de la réserve bloquée.</p></div>
+  <div class="card"><div class="muted" style="font-size:12px">Créances clients</div><strong id="receivables" style="font-size:27px">87 425 €</strong><p>Montants restant à encaisser.</p></div>
+  <div class="card"><div class="muted" style="font-size:12px">Engagements fournisseurs</div><strong>56 100 €</strong><p>Montants à honorer dans le scénario initial.</p></div>
+  <div class="card"><div class="muted" style="font-size:12px">Réserve de sécurité</div><strong id="reserve" style="font-size:27px">0 €</strong><p>Fonds indisponibles pour les dépenses courantes.</p></div>
+ </div>
+ <div class="sectionhead"><h2>Historique hebdomadaire</h2></div><div class="card" id="ledger"></div>
+ <div class="sectionhead"><h2>Gestion de la sauvegarde</h2></div><div class="card"><p>La partie est enregistrée automatiquement sur cet appareil. Exporte régulièrement une sauvegarde pour la transférer ou la conserver.</p><div class="grid"><button class="btn" id="exportSave">Exporter ma sauvegarde</button><button class="btn" id="importSave">Importer une sauvegarde</button><button class="btn" id="resetGame">Nouvelle partie</button><button class="btn" id="rules">Règles économiques</button></div><input type="file" id="fileInput" accept="application/json" hidden></div>
+</section>
+<section class="view" id="view-market">
+ <div class="sectionhead"><h2>Marché & concurrence</h2><small>Univers simulé</small></div>
+ <div class="card"><h3>Conjoncture</h3><p>Marché streetwear : demande fluctuante, concurrence élevée et clients attentifs à la qualité comme au prix. Les indices ci-dessous sont des paramètres de simulation, pas des données économiques réelles.</p><div class="row"><span>Demande streetwear</span><strong>Modérée à forte</strong></div><div class="row"><span>Pression concurrentielle</span><strong>Élevée</strong></div><div class="row"><span>Sensibilité au prix</span><strong>Forte</strong></div></div>
+ <div class="sectionhead"><h2>Concurrents</h2></div><div class="list"><div class="item"><b>NOIR DISTRICT</b><p class="muted">Marque établie · Minimalisme premium · Forte présence digitale</p></div><div class="item"><b>URBAN THEORY</b><p class="muted">Concurrent agressif · Prix compétitifs · Collaborations régulières</p></div><div class="item"><b>FORME 92</b><p class="muted">Marque émergente · Design indépendant · Communauté fidèle</p></div></div>
+ <div class="sectionhead"><h2>Événements récents</h2></div><div class="card" id="marketEvents"></div>
+</section>
+</main>
+<div class="footer">MIMOBI GROUP · CEO SIMULATOR · BUILD 1.1 · SOLO PWA<br>Simulation fictive de gestion · Toutes les valeurs de jeu sont modifiables par les événements.</div>
+</div>
+<div class="modal" id="modal"><div class="modalbox"><div class="row"><h2 id="modalTitle" style="margin:0;font-size:19px">Information</h2><button class="btn ghost" id="modalClose">✕</button></div><div id="modalContent" style="margin-top:14px"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="game.js"></script><script src="register-sw.js"></script>
+</body></html>
