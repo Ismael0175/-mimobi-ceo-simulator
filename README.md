@@ -1,20 +1,17 @@
-# MimoBi CEO Simulator 2.0
+# MimoBi CEO Simulator 4.0
 
-Jeu de gestion entrepreneurial fictif, mobile-first et installable comme PWA.
+Simulation entrepreneuriale fictive, jouable dans Safari sur iPhone ou tout navigateur moderne.
 
-## Nouveautés de la version 2.0
-- Départ réaliste : janvier 2026, capital 5 000 €, aucun CA, aucun salarié, aucun contrat et aucun stock.
-- Décisions hebdomadaires limitées à 4, avec budget et charges fixes.
-- Pôle marque : direction artistique, prototypes, campagne, pré-lancement et qualité.
-- Ventes e-commerce : prix, quantités, demande estimée, stock, chiffre d'affaires et marge brute.
-- Production avec coût, délai de livraison et stock réel.
-- B2B : prospection, opportunités, probabilité de signature, acompte, coûts fournisseur, créances et livraison.
-- RH : recrutements avec salaire mensuel et impact sur les charges.
-- Finance : trésorerie, réserves, dettes, créances, historique, prêt simulé et export/import.
-- Marché dynamique, événements aléatoires, objectifs et sauvegarde locale.
+## Démarrage
+Ouvrir `index.html` ou héberger le dossier sur un service statique HTTPS pour installer la PWA.
 
-## Tester / publier
-Ouvre `index.html` via un hébergement HTTPS (GitHub Pages, Netlify ou équivalent). Sur iPhone, ouvre l'adresse dans Safari puis utilise Partager > Sur l'écran d'accueil.
+## Scénario initial
+- Novembre 2026
+- Capital de départ : 2 000 €
+- Aucun salarié (hors fondateur non rémunéré), stock, contrat ou boutique
+- Streetwear au cœur de la marque ; contrats B2B comme relais de trésorerie
 
-## Important
-Simulation ludique : les coûts, probabilités et mécanismes ne sont pas des conseils financiers ni des données réelles. Les données de partie restent dans le navigateur et ne sont pas synchronisées entre appareils.
+## Fonctionnalités
+Gestion hebdomadaire, investissements, production, ventes, contrats B2B, recrutement, finances, événements, concurrents autonomes, indicateurs de vie du CEO, instructions directes par mots-clés, sauvegarde locale et import/export JSON.
+
+Les montants, entreprises, concurrents, événements et calculs sont fictifs et ne constituent ni des prévisions ni des conseils financiers. Les sauvegardes restent dans le navigateur de l'appareil.

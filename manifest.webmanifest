@@ -1,1 +1,23 @@
-{"name":"MimoBi CEO Simulator 2.0","short_name":"MimoBi CEO","start_url":"./index.html","display":"standalone","background_color":"#080a10","theme_color":"#090b12","description":"Simulation entrepreneuriale hebdomadaire MimoBi","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "MimoBi CEO Simulator 4.0 4.0",
+  "short_name": "MimoBi CEO",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080a10",
+  "theme_color": "#090b12",
+  "description": "Simulation entrepreneuriale immersive MimoBi",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
